@@ -19,8 +19,8 @@ passport.deserializeUser((id,done)=>{
 Passwort.use(new GoogleStrategy({
     clientID : keys.googleClientID,
     clientSecret : keys.googleClientSecret,
-    callbackURL : '/auth/google/callback',
-    proxy : true
+    callbackURL : 'https://server-tau-flame.vercel.app/auth/google/callback'
+    // proxy : true
 },
 (accessToken,refreshToken,profile,done) =>{
     User.findOne({googleId : profile.id}).then(existingUser =>{
