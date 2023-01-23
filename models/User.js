@@ -9,4 +9,6 @@ const userSchema = new Schema({
     credits : {type : Number , default : 0 }
 });
 
+
+//load model to the mongoose library
 mongoose.model('users',userSchema);
